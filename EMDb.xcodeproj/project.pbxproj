@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E75B571ED6BFA043DA30F9B /* Pods_EMDb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9930D01F2A53FED838538D1 /* Pods_EMDb.framework */; };
+		C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C175D6801E2420B70037A357 /* CoreDataStack.swift */; };
 		C1AA8EB21E241D530000A9DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA8EB11E241D530000A9DB /* AppDelegate.swift */; };
 		C1AA8EB41E241D530000A9DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA8EB31E241D530000A9DB /* ViewController.swift */; };
 		C1AA8EB71E241D530000A9DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AA8EB51E241D530000A9DB /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62D5787379A2BDA208988FEF /* Pods-EMDb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMDb.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMDb/Pods-EMDb.release.xcconfig"; sourceTree = "<group>"; };
+		7C16E3240A0D021851C11BE3 /* Pods-EMDb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMDb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EMDb/Pods-EMDb.debug.xcconfig"; sourceTree = "<group>"; };
+		B9930D01F2A53FED838538D1 /* Pods_EMDb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMDb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C175D6801E2420B70037A357 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C1AA8EAE1E241D530000A9DB /* EMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AA8EB11E241D530000A9DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1AA8EB31E241D530000A9DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E75B571ED6BFA043DA30F9B /* Pods_EMDb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92C7EA4EE0208A71D77A971E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C16E3240A0D021851C11BE3 /* Pods-EMDb.debug.xcconfig */,
+				62D5787379A2BDA208988FEF /* Pods-EMDb.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B66AC0755493DDAD22DE9472 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9930D01F2A53FED838538D1 /* Pods_EMDb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C1AA8EA51E241D530000A9DB = {
 			isa = PBXGroup;
 			children = (
 				C1AA8EB01E241D530000A9DB /* EMDb */,
 				C1AA8EAF1E241D530000A9DB /* Products */,
+				92C7EA4EE0208A71D77A971E /* Pods */,
+				B66AC0755493DDAD22DE9472 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +80,7 @@
 		C1AA8EB01E241D530000A9DB /* EMDb */ = {
 			isa = PBXGroup;
 			children = (
+				C175D6801E2420B70037A357 /* CoreDataStack.swift */,
 				C1AA8EB11E241D530000A9DB /* AppDelegate.swift */,
 				C1AA8EB31E241D530000A9DB /* ViewController.swift */,
 				C1AA8EB51E241D530000A9DB /* Main.storyboard */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1AA8EC01E241D530000A9DB /* Build configuration list for PBXNativeTarget "EMDb" */;
 			buildPhases = (
+				D520F143106A91425F03D0E4 /* [CP] Check Pods Manifest.lock */,
 				C1AA8EAA1E241D530000A9DB /* Sources */,
 				C1AA8EAB1E241D530000A9DB /* Frameworks */,
 				C1AA8EAC1E241D530000A9DB /* Resources */,
+				85622CA53A14ADFEE45F4E22 /* [CP] Embed Pods Frameworks */,
+				71F9E0273F291D75D9DD07C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,11 +162,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71F9E0273F291D75D9DD07C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMDb/Pods-EMDb-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85622CA53A14ADFEE45F4E22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMDb/Pods-EMDb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D520F143106A91425F03D0E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1AA8EAA1E241D530000A9DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */,
 				C1AA8EB41E241D530000A9DB /* ViewController.swift in Sources */,
 				C1AA8EB21E241D530000A9DB /* AppDelegate.swift in Sources */,
 			);
@@ -257,6 +336,7 @@
 		};
 		C1AA8EC11E241D530000A9DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C16E3240A0D021851C11BE3 /* Pods-EMDb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9T98R8E6Y6;
@@ -270,6 +350,7 @@
 		};
 		C1AA8EC21E241D530000A9DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62D5787379A2BDA208988FEF /* Pods-EMDb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9T98R8E6Y6;
@@ -300,6 +381,7 @@
 				C1AA8EC21E241D530000A9DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
