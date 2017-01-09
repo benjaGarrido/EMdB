@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		9E75B571ED6BFA043DA30F9B /* Pods_EMDb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9930D01F2A53FED838538D1 /* Pods_EMDb.framework */; };
 		C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C175D6801E2420B70037A357 /* CoreDataStack.swift */; };
+		C175D6841E24290E0037A357 /* EMdB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C175D6821E24290E0037A357 /* EMdB.xcdatamodeld */; };
 		C1AA8EB21E241D530000A9DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA8EB11E241D530000A9DB /* AppDelegate.swift */; };
 		C1AA8EB41E241D530000A9DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA8EB31E241D530000A9DB /* ViewController.swift */; };
 		C1AA8EB71E241D530000A9DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AA8EB51E241D530000A9DB /* Main.storyboard */; };
 		C1AA8EB91E241D530000A9DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1AA8EB81E241D530000A9DB /* Assets.xcassets */; };
 		C1AA8EBC1E241D530000A9DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AA8EBA1E241D530000A9DB /* LaunchScreen.storyboard */; };
+		C1B409AA1E242FC800AFD7B0 /* RemoteiTunesMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */; };
+		C1B409AC1E242FE600AFD7B0 /* MovieManaged+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */; };
+		C1B409AE1E242FFB00AFD7B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409AD1E242FFB00AFD7B0 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,7 @@
 		7C16E3240A0D021851C11BE3 /* Pods-EMDb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMDb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EMDb/Pods-EMDb.debug.xcconfig"; sourceTree = "<group>"; };
 		B9930D01F2A53FED838538D1 /* Pods_EMDb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EMDb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C175D6801E2420B70037A357 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C175D6831E24290E0037A357 /* EMdB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMdB.xcdatamodel; sourceTree = "<group>"; };
 		C1AA8EAE1E241D530000A9DB /* EMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AA8EB11E241D530000A9DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1AA8EB31E241D530000A9DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		C1AA8EB81E241D530000A9DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1AA8EBB1E241D530000A9DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1AA8EBD1E241D530000A9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteiTunesMovieService.swift; sourceTree = "<group>"; };
+		C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MovieManaged+Mapping.swift"; sourceTree = "<group>"; };
+		C1B409AD1E242FFB00AFD7B0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,10 @@
 				C1AA8EB81E241D530000A9DB /* Assets.xcassets */,
 				C1AA8EBA1E241D530000A9DB /* LaunchScreen.storyboard */,
 				C1AA8EBD1E241D530000A9DB /* Info.plist */,
+				C175D6821E24290E0037A357 /* EMdB.xcdatamodeld */,
+				C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */,
+				C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */,
+				C1B409AD1E242FFB00AFD7B0 /* Movie.swift */,
 			);
 			path = EMDb;
 			sourceTree = "<group>";
@@ -215,7 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B409AE1E242FFB00AFD7B0 /* Movie.swift in Sources */,
 				C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */,
+				C1B409AA1E242FC800AFD7B0 /* RemoteiTunesMovieService.swift in Sources */,
+				C175D6841E24290E0037A357 /* EMdB.xcdatamodeld in Sources */,
+				C1B409AC1E242FE600AFD7B0 /* MovieManaged+Mapping.swift in Sources */,
 				C1AA8EB41E241D530000A9DB /* ViewController.swift in Sources */,
 				C1AA8EB21E241D530000A9DB /* AppDelegate.swift in Sources */,
 			);
@@ -384,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C175D6821E24290E0037A357 /* EMdB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C175D6831E24290E0037A357 /* EMdB.xcdatamodel */,
+			);
+			currentVersion = C175D6831E24290E0037A357 /* EMdB.xcdatamodel */;
+			path = EMdB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C1AA8EA61E241D530000A9DB /* Project object */;
 }
