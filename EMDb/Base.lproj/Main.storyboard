@@ -12,7 +12,7 @@
         <!--Top Películas iTunes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EMDb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="EMDb" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -38,7 +38,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fv6-3f-E0x">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="Fv6-3f-E0x" customClass="MovieCell" customModule="EMDb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -62,6 +62,7 @@
                                         </constraints>
                                         <size key="customSize" width="113" height="170"/>
                                         <connections>
+                                            <outlet property="movieImage" destination="eyN-8V-mAj" id="uMG-Le-LUX"/>
                                             <segue destination="UCL-Ga-iBH" kind="show" identifier="detailSegue" id="FVu-68-LWi"/>
                                         </connections>
                                     </collectionViewCell>
@@ -80,6 +81,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Top Películas iTunes" id="2E0-ML-XJX"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dTX-Uq-5vh" id="3Fz-9t-uki"/>
+                        <outlet property="searchBar" destination="TfI-S1-T8h" id="h9J-3M-eHr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +93,7 @@
         <!--Marcadas para ver-->
         <scene sceneID="1Bu-ke-JxE">
             <objects>
-                <viewController id="39G-VU-ghu" sceneMemberID="viewController">
+                <viewController id="39G-VU-ghu" customClass="FavoritesViewController" customModule="EMDb" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Wc-DD-eQ1"/>
                         <viewControllerLayoutGuide type="bottom" id="5B9-tp-Dem"/>
@@ -107,7 +112,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="0uF-RA-xcd">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="0uF-RA-xcd" customClass="MovieCell" customModule="EMDb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -131,6 +136,7 @@
                                         </constraints>
                                         <size key="customSize" width="113" height="170"/>
                                         <connections>
+                                            <outlet property="movieImage" destination="Esh-aH-Jwe" id="Ee9-M5-PvQ"/>
                                             <segue destination="UCL-Ga-iBH" kind="show" identifier="detailSegue" id="Yr4-aA-ikx"/>
                                         </connections>
                                     </collectionViewCell>
@@ -151,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="2012" y="791.15442278860576"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie View Controller-->
         <scene sceneID="8s8-tQ-fbJ">
             <objects>
-                <viewController id="UCL-Ga-iBH" sceneMemberID="viewController">
+                <viewController id="UCL-Ga-iBH" customClass="MovieViewController" customModule="EMDb" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ou-5Q-Ptc"/>
                         <viewControllerLayoutGuide type="bottom" id="x3s-4T-qiV"/>
@@ -284,7 +290,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oSX-mZ-jaJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Top Pelis" image="top-icon" id="lbK-sl-RQW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pqx-Hq-BLN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pqx-Hq-BLN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,7 +314,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xJK-Ar-Y9S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Para ver" image="ver-icon" id="owL-WM-01S"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zU4-Nk-sfn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zU4-Nk-sfn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,6 +338,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OSd-gb-qf3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="v66-Wc-mcS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>

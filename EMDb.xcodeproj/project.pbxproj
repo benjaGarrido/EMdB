@@ -21,6 +21,7 @@
 		C1B409B61E28199F00AFD7B0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409B51E28199F00AFD7B0 /* ListViewController.swift */; };
 		C1B409B81E2819AB00AFD7B0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409B71E2819AB00AFD7B0 /* FavoritesViewController.swift */; };
 		C1B409BA1E2819B900AFD7B0 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409B91E2819B900AFD7B0 /* MovieViewController.swift */; };
+		C1B409BC1E281D6400AFD7B0 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409BB1E281D6400AFD7B0 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C1B409B51E28199F00AFD7B0 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C1B409B71E2819AB00AFD7B0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C1B409B91E2819B900AFD7B0 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		C1B409BB1E281D6400AFD7B0 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				C175D6821E24290E0037A357 /* EMdB.xcdatamodeld */,
 				C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */,
 				C1B409AD1E242FFB00AFD7B0 /* Movie.swift */,
+				C1B409BB1E281D6400AFD7B0 /* MovieCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				C1B409AE1E242FFB00AFD7B0 /* Movie.swift in Sources */,
 				C1B409BA1E2819B900AFD7B0 /* MovieViewController.swift in Sources */,
 				C1B409B81E2819AB00AFD7B0 /* FavoritesViewController.swift in Sources */,
+				C1B409BC1E281D6400AFD7B0 /* MovieCell.swift in Sources */,
 				C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */,
 				C1B409AA1E242FC800AFD7B0 /* RemoteiTunesMovieService.swift in Sources */,
 				C175D6841E24290E0037A357 /* EMdB.xcdatamodeld in Sources */,
