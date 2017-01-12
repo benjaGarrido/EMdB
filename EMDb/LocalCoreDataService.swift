@@ -97,24 +97,26 @@ class LocalCoreDataService {
             }
              try context.save()
         } catch {
-            print("Error while upodating movies from Core Data")
+            print("Error while updating movies from Core Data")
         }
     }
     
     func getMovieById(id: String, favorite: Bool) -> MovieManaged? {
         let context = stack.persistentContainer.viewContext
-        let request: NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
+        let request : NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
         
-        let predicate = NSPredicate(format: "id = \(id) and favorite =\(favorite)")
+        let predicate = NSPredicate(format: "id = \(id) and favorite = \(favorite)")
         request.predicate = predicate
         
         do {
+            
             let fetchedMovies = try context.fetch(request)
-            if fetchedMovies.count>0 {
+            if fetchedMovies.count > 0 {
                 return fetchedMovies.last
             } else {
                 return nil
             }
+            
         } catch {
             print("Error while getting movie from Core Data")
             return nil

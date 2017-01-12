@@ -24,6 +24,16 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        loadData()
+        refresh.addTarget(self, action: #selector(loadData), for: UIControlEvents.valueChanged)
+        collectionView.refreshControl?.tintColor = UIColor.white
+        collectionView.refreshControl = refresh
+        
+        setupCollectionViewPadding()
         
     }
     
@@ -57,5 +67,60 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if let imageData = movie.image {
             cell.movieImage.kf.setImage(with: ImageResource(downloadURL: URL(string: imageData)!), placeholder: #imageLiteral(resourceName: "img-loading"), options: nil, progressBlock: nil, completionHandler: nil)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 113, height: 170)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.view.addGestureRecognizer(self.tapGesture)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            // Buscar
+            loadData()
+        }
+    }
+    
+    func hideKeyboard() {
+        self.searchBar.resignFirstResponder()
+        self.view.removeGestureRecognizer(self.tapGesture)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let term = searchBar.text {
+            dataProvider.searchMovies(byTerm: term) { movies in
+                if let movies = movies {
+                    self.movies = movies
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                        searchBar.resignFirstResponder()
+                    }
+                }
+            }
+        }
+    }
+    
+    func loadData() {
+        dataProvider.getTopMovies(localHandler: { movies in
+            if let movies = movies {
+                self.movies = movies
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } else {
+                print("No hay registros en Core Data")
+            }
+        }, remoteHandler: { movies in
+            if let movies = movies {
+                self.movies = movies
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.refresh.endRefreshing()
+                }
+            }
+        })
     }
 }
