@@ -29,7 +29,7 @@ class LocalCoreDataService {
         }
     }
     
-    func getTopMovies(localHandler: ([Movie]?) -> Void, remoteHandler: ([Movie]?) -> Void){
+    func getTopMovies(localHandler: ([Movie]?) -> Void, remoteHandler: @escaping ([Movie]?) -> Void){
         localHandler(self.queryTopMovies())
         
         remoteMovieService.getTopMovies() { movies in
@@ -41,11 +41,18 @@ class LocalCoreDataService {
                 for movieDictionary in movies {
                     if let movie = self.getMovieById(id: movieDictionary["id"]!, favorite: false) {
                         // update
+                        self.updateMovie(movieDictionary: movieDictionary, movie: movie, order: order)
                     } else {
                         // insert
-                        
+                        self.insertMovie(movieDictionary: movieDictionary, order: order)
                     }
+                    order += 1
                 }
+                
+                // Borrar los no sincronizados
+                self.removeOldNotFavoritedMovies()
+                
+                remoteHandler(self.queryTopMovies())
             } else {
                 remoteHandler(nil)
             }
@@ -111,6 +118,52 @@ class LocalCoreDataService {
         } catch {
             print("Error while getting movie from Core Data")
             return nil
+        }
+    }
+    
+    func insertMovie(movieDictionary: [String:String], order: Int) {
+        let context = stack.persistentContainer.viewContext
+        let movie = MovieManaged(context: context)
+        
+        movie.id = movieDictionary["id"]
+        updateMovie(movieDictionary: movieDictionary, movie: movie, order: order)
+    }
+    
+    func updateMovie(movieDictionary: [String:String], movie: MovieManaged, order: Int) {
+        let context = stack.persistentContainer.viewContext
+        
+        movie.order = Int16(order)
+        movie.title = movieDictionary["title"]
+        movie.summary = movieDictionary["summary"]
+        movie.category = movieDictionary["category"]
+        movie.director = movieDictionary["director"]
+        movie.image = movieDictionary["image"]
+        movie.sync = true
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error while updating Core Data")
+        }
+    }
+    
+    func removeOldNotFavoritedMovies() {
+        let context = stack.persistentContainer.viewContext
+        let request: NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
+        
+        let predicate = NSPredicate(format: "favorite =\(false)")
+        request.predicate = predicate
+        
+        do {
+            let fetchedMovies = try context.fetch(request)
+            for managedMovie in fetchedMovies {
+                if !managedMovie.sync {
+                    context.delete(managedMovie)
+                }
+            }
+            try context.save()
+        } catch {
+            print("Error while deleting from Core Data")
         }
     }
 }
