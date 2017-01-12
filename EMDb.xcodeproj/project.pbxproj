@@ -18,6 +18,7 @@
 		C1B409AA1E242FC800AFD7B0 /* RemoteiTunesMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */; };
 		C1B409AC1E242FE600AFD7B0 /* MovieManaged+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */; };
 		C1B409AE1E242FFB00AFD7B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409AD1E242FFB00AFD7B0 /* Movie.swift */; };
+		C1B409B01E280E8000AFD7B0 /* LocalCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B409AF1E280E8000AFD7B0 /* LocalCoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteiTunesMovieService.swift; sourceTree = "<group>"; };
 		C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MovieManaged+Mapping.swift"; sourceTree = "<group>"; };
 		C1B409AD1E242FFB00AFD7B0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C1B409AF1E280E8000AFD7B0 /* LocalCoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				C1AA8EBD1E241D530000A9DB /* Info.plist */,
 				C175D6821E24290E0037A357 /* EMdB.xcdatamodeld */,
 				C1B409A91E242FC800AFD7B0 /* RemoteiTunesMovieService.swift */,
+				C1B409AF1E280E8000AFD7B0 /* LocalCoreDataService.swift */,
 				C1B409AB1E242FE600AFD7B0 /* MovieManaged+Mapping.swift */,
 				C1B409AD1E242FFB00AFD7B0 /* Movie.swift */,
 			);
@@ -231,6 +234,7 @@
 				C175D6811E2420B70037A357 /* CoreDataStack.swift in Sources */,
 				C1B409AA1E242FC800AFD7B0 /* RemoteiTunesMovieService.swift in Sources */,
 				C175D6841E24290E0037A357 /* EMdB.xcdatamodeld in Sources */,
+				C1B409B01E280E8000AFD7B0 /* LocalCoreDataService.swift in Sources */,
 				C1B409AC1E242FE600AFD7B0 /* MovieManaged+Mapping.swift in Sources */,
 				C1AA8EB41E241D530000A9DB /* ViewController.swift in Sources */,
 				C1AA8EB21E241D530000A9DB /* AppDelegate.swift in Sources */,
