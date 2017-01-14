@@ -152,6 +152,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Marcadas para ver" id="TIx-a1-7g3"/>
+                    <connections>
+                        <outlet property="collectionView" destination="phz-8g-Sj9" id="P7d-EJ-cOF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asr-Yr-SBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +233,9 @@
                                         <state key="normal" title="No me interesa" backgroundImage="btn-off">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="favoritePressed:" destination="UCL-Ga-iBH" eventType="touchUpInside" id="rPN-NL-8ss"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
@@ -279,6 +285,14 @@
                             <constraint firstItem="x3s-4T-qiV" firstAttribute="top" secondItem="6iA-5Z-Aak" secondAttribute="bottom" constant="20" id="ias-hM-Ve6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnFavorite" destination="SKH-h3-EgH" id="onM-A5-BYM"/>
+                        <outlet property="movieCategory" destination="Bsi-Tk-XvS" id="sPj-0Q-iXv"/>
+                        <outlet property="movieDirector" destination="rbQ-Mt-Vr9" id="7vW-fp-AFj"/>
+                        <outlet property="movieImage" destination="PBL-71-JSE" id="uiJ-3e-FNh"/>
+                        <outlet property="movieSummary" destination="6iA-5Z-Aak" id="ZCu-uk-gB7"/>
+                        <outlet property="movieTitle" destination="ay1-is-szM" id="itH-ig-Ye2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WR1-IY-2fP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
