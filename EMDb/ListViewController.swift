@@ -26,6 +26,7 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        searchBar.delegate = self
         
         self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         loadData()
@@ -122,5 +123,16 @@ class ListViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 }
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPathSelected = collectionView.indexPathsForSelectedItems?.last {
+                let selectedMovie = movies[indexPathSelected.row]
+                let detailVC = segue.destination as! MovieViewController
+                detailVC.movie = selectedMovie
+            }
+            hideKeyboard()
+        }
     }
 }

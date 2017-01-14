@@ -80,7 +80,9 @@
                             <constraint firstAttribute="trailing" secondItem="dTX-Uq-5vh" secondAttribute="trailing" id="rUB-rR-IEL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Películas iTunes" id="2E0-ML-XJX"/>
+                    <navigationItem key="navigationItem" title="Top Películas iTunes" id="2E0-ML-XJX">
+                        <barButtonItem key="backBarButtonItem" title=" " id="re7-zt-jc9"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="dTX-Uq-5vh" id="3Fz-9t-uki"/>
                         <outlet property="searchBar" destination="TfI-S1-T8h" id="h9J-3M-eHr"/>
@@ -151,7 +153,9 @@
                             <constraint firstItem="phz-8g-Sj9" firstAttribute="leading" secondItem="Zhz-vo-Evr" secondAttribute="leading" id="m6Q-CR-JhY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Marcadas para ver" id="TIx-a1-7g3"/>
+                    <navigationItem key="navigationItem" title="Marcadas para ver" id="TIx-a1-7g3">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3Xz-wU-FLl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="phz-8g-Sj9" id="P7d-EJ-cOF"/>
                     </connections>

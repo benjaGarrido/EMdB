@@ -220,5 +220,13 @@ class LocalCoreDataService {
                 print("Error while marking as favorite")
             }
         }
+        updateFavoritesBadge()
+    }
+    
+    func updateFavoritesBadge() {
+        if let totalFavorites = getFavoriteMovies()?.count {
+            let notification = Notification(name: Notification.Name("updateFavoritesBadgeNotification"), object: totalFavorites, userInfo: nil)
+            NotificationCenter.default.post(notification)
+        }
     }
 }

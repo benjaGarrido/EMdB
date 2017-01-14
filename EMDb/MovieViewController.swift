@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieViewController: UIViewController {
 
@@ -20,10 +21,23 @@ class MovieViewController: UIViewController {
     var dataProvider = LocalCoreDataService()
     var movie: Movie?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if let movie = movie {
+            if let image = movie.image {
+                movieImage.kf.setImage(with: ImageResource(downloadURL: URL(string: image)!))
+            }
+            movieTitle.text = movie.title
+            
+            self.title = movie.title
+            
+            movieSummary.text = movie.summary
+            movieCategory.text = movie.category
+            movieDirector.text = movie.director
+            
+            configureFavoriteButton()
+        }
     }
     
     func configureFavoriteButton() {
@@ -40,6 +54,12 @@ class MovieViewController: UIViewController {
     @IBAction func favoritePressed(_ sender: UIButton) {
         if let movie = self.movie {
             dataProvider.markUnmarkFavorite(movie: movie)
+            configureFavoriteButton()
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        movieSummary.scrollRangeToVisible(NSMakeRange(0, 0))
     }
 }

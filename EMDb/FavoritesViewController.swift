@@ -23,6 +23,9 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         setupCollectionViewPadding()
 
     }
@@ -79,6 +82,16 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
         if let movies = dataProvider.getFavoriteMovies() {
             self.movies = movies
             self.collectionView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPathSelected = collectionView.indexPathsForSelectedItems?.last {
+                let selectedMovie = movies[indexPathSelected.row]
+                let detailVC = segue.destination as! MovieViewController
+                detailVC.movie = selectedMovie
+            }
         }
     }
 }
